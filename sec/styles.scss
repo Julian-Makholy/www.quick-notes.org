@@ -1,0 +1,261 @@
+*, *::after, *::before {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&display=swap');
+
+$primary: #446DF6;
+$success: #33CA7f;
+$danger: #e01541;
+$dark: #121614;
+$light: #a4b1aa;
+$warning: #FFFF00;
+$edit: #ff8c00;
+
+$boxs: 3px 5px 8px 2px;
+$transition: all 250ms ease-out;
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  padding: 2rem;
+  color: $dark;
+}
+
+.modal-container {
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba($dark, .2);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: $transition;
+  
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .modal {
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    background-color: white;
+    border: 3px solid $dark;
+    padding: 2rem;
+    position: relative;
+    
+    .modal__title {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      max-width: 85%;
+    }
+    .modal__body{
+      white-space: pre-wrap;
+    }
+
+    .modal__btn {
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      color: $dark;
+      font-size: 2.5rem;
+      line-height: 2rem;
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+      border: 3px solid $dark;
+      border-radius: 50%;
+      background-color: white;
+      box-shadow: $boxs rgba($dark, .2);
+      transition: $transition;
+      
+      &:hover, &:focus {
+        outline: none;
+        border: 3px solid $light;
+        color: $light;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.form-container {
+  max-width: 1000px;
+  margin: 1rem auto;
+  
+  h1 {
+    font-size: 4rem;
+    text-align: center;
+  }
+  
+
+  button{
+  border: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+  .message {
+    margin: 1rem 0 1.5rem;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    
+    &.success-message {
+      background-color: $success;
+      box-shadow: 2px 4px 7px 2px rgba($success, .2);
+    }
+    &.remove-message {
+      background-color: $danger;
+      box-shadow: 2px 4px 7px 2px rgba($danger, .2);
+    }
+    &.alert-message {
+      background-color: $edit;
+      box-shadow: 2px 4px 7px 2px rgba($edit, .2);
+    }
+  }
+}
+
+form {
+  display: grid;
+  grid-gap: 1rem;
+  margin: 1rem 0;
+  width: 100%;
+  
+  
+  [for="title"], [for="note"] {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    grid-gap: 1rem;
+    background-color: rgba($light, .2);
+    font-weight: bold;
+  
+    input, textarea {
+      flex: 1 1 80%;
+      border: 3px solid $light;
+      padding: .5rem;
+      color: $dark;
+      width: 100%;
+      
+      &:focus {
+        outline: 2px solid $dark;
+      }
+    }
+  }
+  [type="submit"]{
+    background-color: $success;
+    box-shadow: $boxs rgba($success, .2);
+    border: 3px solid transparent;
+    font-size: 2.3rem;
+    color: white;
+    padding: .5rem;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    
+    &:hover, &:focus {
+      outline: none;
+      box-shadow: none;
+      border: 3px solid rgba($dark, .5);
+    }
+  }
+}
+
+.note-container {
+  margin: 2rem auto 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 100px));
+  grid-gap: 1.5rem;
+  
+  
+  .note {
+   
+    border: 3px solid rgba($primary, .2);
+    padding: 1.5rem;
+    transition: all 250ms ease-in-out;
+  }
+  
+  .note__title {
+    font-size: 2.5rem;
+    margin-bottom: .5rem;
+  }
+  
+  .note__body {
+    white-space: pre-wrap;
+    overflow: hidden;
+    max-height: 9rem;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+  }
+  
+  .note__btns {
+    margin:auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: .5rem;
+    
+   
+    .note__btn { 
+      
+      font-family: inherit;
+      font-size: inherit;
+      padding: .5rem 1rem;
+      margin-top: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: $transition;
+     
+      &:focus, &:hover {
+       
+        box-shadow: none;
+      }
+    }
+    .note__view {
+      background-color: $primary;
+      box-shadow: $boxs rgba($primary, .2);
+    }
+    .note__delete {
+      background-color: $danger;
+      box-shadow: $boxs rgba($danger, .2);
+    }
+    .note__edit {
+      background-color: $edit;
+      box-shadow: $boxs rgba($edit, .2);
+    }
+    
+  }
+}
+
+#searchBar {
+  text-align: center;
+  width: 50%;
+  height: 32px;
+  border-radius: 3px;
+  border: 1px solid hsl(133, 84%, 45%);
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 0 auto;
+  display: block;
+}
+#searchWrapper{
+  position: relative;}
+
+#searchWrapper::after {
+  content: '🔍';
+  position: absolute;
+  top: 4px;
+  right: 25.5%;
+}

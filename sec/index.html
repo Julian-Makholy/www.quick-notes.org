@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Notes</title>
+    <link rel="stylesheet"  href="styles.scss" />
+    <script type="module" src="javascript.js"></script>
+    <script src="https://cdn.tiny.cloud/1/xmrqpddfw62k267o514rio5gke50l4j6efr4bwpe4e3xzco8/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  </head>
+ 
+  <body>
+    <div class="modal-container">
+      <div class="modal">
+        <button class="modal__btn">&times;</button>
+        <h2 class="modal__title">Title here</h2>
+        <p class="modal__body">Lndis</p>
+      </div>
+    </div>
+
+    <div class="form-container">
+
+      <h1>Quick Notes</h1>
+      
+      <form method="post"> 
+
+        <label for="title">Title
+          <input type="text" id="title" placeholder="Enter a note title.">
+        </label>
+
+        <label for="note">Note       
+          <textarea name ="text1"  id="htmlnote" cols="220" rows="20" placeholder="Enter note text." class="mceEditor" ></textarea>
+        </label>
+       
+        <input id="button" type="submit">
+      </form>
+    </div>
+
+    <div id="searchWrapper"> <input type="text"  name="searchBar" id="searchBar" placeholder="search for a note" /> </div>
+    
+    <div class="note-container"></div> 
+  </body>
+
+</html>
