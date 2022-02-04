@@ -53,6 +53,9 @@
   "dependencies": {
   
     
+  "@swc/helpers": "^0.3.2",
+  
+    
   "aws-sdk": "^2.1066.0",
   
     
@@ -64,8 +67,9 @@
   },
   
   "optionalDependencies": {
-       "fsevents": "~2.3.2"
-    }
   
- 
+    
+  "fsevents": "~2.3.2"
+  
+  }
 }
