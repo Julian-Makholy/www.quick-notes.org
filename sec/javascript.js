@@ -1,4 +1,4 @@
-import Darkmode from 'darkmode-js';
+
 const
  noteContainer = document.querySelector('.note-container'),
  modalContainer = document.querySelector('.modal-container'),
@@ -177,20 +177,4 @@ form.addEventListener('submit', (e) => {
   }
 });
 
-// dark mode
-const options = {
-  bottom: '850px', // default: '32px'
-  right: '34px', // default: '32px'
-  left: 'unset', // default: 'unset'
-  time: '0.5s', // default: '0.3s'
-  mixColor: '#fff', // default: '#fff'
-  backgroundColor: '#fff',  // default: '#fff'
-  buttonColorDark: '#111030',  // default: '#100f2c'
-  buttonColorLight: '#fff', // default: '#fff'
-  saveInCookies: false, // default: true,
-  label: '🌓', // default: ''
-  autoMatchOsTheme: true // default: true
-}
- 
-const darkmode = new Darkmode(options);
-darkmode.showWidget();
+

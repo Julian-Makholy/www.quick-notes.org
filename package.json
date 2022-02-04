@@ -38,6 +38,9 @@
   "devDependencies": {
   
     
+  "@parcel/transformer-sass": "^2.2.1",
+  
+    
   "parcel": "^2.2.1",
   
     
@@ -57,10 +60,10 @@
   "aws-sdk": "^2.1066.0",
   
     
-  "commander": "^9.0.0",
+  "commander": "^9.0.0"
   
     
-  "darkmode-js": "^1.5.7"
+
   
   },
   
