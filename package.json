@@ -60,10 +60,10 @@
   "aws-sdk": "^2.1066.0",
   
     
-  "commander": "^9.0.0"
+  "commander": "^9.0.0",
   
     
-
+  "v8-compile-cache": "^2.3.0"
   
   },
   
