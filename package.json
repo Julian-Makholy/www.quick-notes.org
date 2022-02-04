@@ -2,7 +2,7 @@
   
   "source": "sec/index.html",
   
-  "main": "dist/index.js",
+ 
   
   "browserslist": "> 0.5%, last 2 versions, not dead",
   
