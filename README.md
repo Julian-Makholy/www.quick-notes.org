@@ -7,4 +7,3 @@ planning to implement alot more features in the future.
 Ok uploading the website is proving to be harder than expected
 
 
-The promised day has come, afther months of inactivity, I return to you quick notes, with my added experince you shall be moulded anew to better reflect your supremacy other other note web apps. 
